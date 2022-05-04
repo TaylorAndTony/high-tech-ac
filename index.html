@@ -1,12 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>黑科技制冷空调</title>
 </head>
+
 <body>
-    
+    <div id="main">
+        <!-- title -->
+        <div id="top">
+            <p>天气渐热</p>
+            <p>本群已装备多种高科技制冷设备</p>
+            <p>为节约能源</p>
+            <p>请选择合适的设备运行</p>
+        </div>
+        <!-- button -->
+        <div id="choose">
+            <button onclick="fan()">电风扇</button>
+            <button onclick="ac()">空调</button>
+            <button onclick="machine()">压缩机</button>
+        </div>
+        <!-- temp -->
+        <div id="temp">
+            群内温度：<span id="temp-num">35</span>℃
+        </div>
+        <!-- choose devices -->
+        <div id="swap">
+            <div id="fan" class="swap-area">
+                <img src="img/fan.png" alt="fan" id="img-fan">
+            </div>
+            <div id="ac" class="swap-area">
+                <img src="img/ac.png" alt="fan" id="img-fan">
+            </div>
+            <div id="machine" class="swap-area">
+                <img src="img/machine.png" alt="fan" id="img-fan">
+            </div>
+        </div>
+    </div>
+    <!-- https://taylorandtony.github.io/high-tech-ac/ -->
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #d8eafa, #b9c4ec, #c3c8e6, #e4e2ee);
+            background-size: 400% 100%;
+            animation: Gradient 8s ease infinite;
+            transition: all .5s;
+        }
+
+        .swap-area {
+            transition: all .5s;
+        }
+
+        #top {
+            font-size: 30px;
+            text-align: center;
+            line-height: 1rem;
+        }
+
+        #choose {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        #swap {
+            width: 80%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #temp {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 2em;
+            line-height: 50px;
+        }
+        #temp-num {
+            font-size: 50px;
+            line-height: 50px;
+            color: #ee4c54;
+            transition: all 0.5s;
+            margin-right: 10px;
+        }
+        /* devices */
+
+        #fan {
+            margin-top: 100px;
+            text-align: center;
+            animation: fan .8s linear infinite;
+        }
+
+        #ac {
+            margin-top: 100px;
+            text-align: center;
+            animation: ac 2s infinite;
+        }
+        #machine {
+            margin-top: 100px;
+            text-align: center;
+            animation: machine .2s infinite;
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 0%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes ac {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes fan {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes machine {
+            0% {
+                transform: translate(10px, 20px) rotate(10deg);
+            }
+            20% {
+                transform: translate(-10px, -20px) rotate(0deg);
+            }
+            40% {
+                transform: translate(3px, 4px) rotate(-13deg);
+            }
+            60% {
+                transform: translate(-9px, -10px) rotate(-4deg);
+            }
+            80% {
+                transform: translate(12px, 12px) rotate(2deg);;
+            }
+            100% {
+                transform: translate(-6px, 9px) rotate(7deg);;
+            }
+        }
+
+        button {
+            font-size: 30px;
+            margin: 10px;
+            padding: 10px;
+            padding-left: 1em;
+            padding-right: 1em;
+            border: 0px;
+            border-radius: 1em;
+            background-color: #2196f3;
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <script src="change.js"></script>
 </body>
+
 </html>
