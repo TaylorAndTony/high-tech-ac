@@ -89,7 +89,7 @@ window.onload = () => {
             + random(-20, 20)
             + "px) rotate("
             + random(-10, 10) + "deg)";
-    }, 100)
+    }, 50)
     // random move maxwell
     setInterval(function () {
         let maxw = document.getElementById('maxwell');
